@@ -1,9 +1,5 @@
 pipeline {
-    agent any
-    triggers { cron('H */4 * * 1-5') }
-    parameters {
-        string(name: 'USER', defaultValue: 'tu usuario', description: 'Usuario de GitHub')
-    }
+    agent {label "windows"}
     stages {
         stage('build') {
             steps {
