@@ -8,6 +8,8 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.thucydides.core.annotations.Step;
 
+import java.time.Duration;
+
 import static com.cedaniel200.automatizacion.exceptions.AuthenticationError.MESSAGE_FAILED_AUTHENTICATION;
 import static com.cedaniel200.automatizacion.userinterface.LoginPage.*;
 import static com.cedaniel200.automatizacion.userinterface.MenuPage.LOG_IN_MENU;
@@ -35,7 +37,7 @@ public class Authenticate implements Task {
                 Click.on(LOG_IN_BUTTON)
         );
 
-        actor.should(seeThat(the(LOG_OUT_MENU), isVisible())
+        actor.should(seeThat(the(LOG_OUT_MENU.waitingForNoMoreThan(Duration.ofSeconds(10))), isVisible())
                 .orComplainWith(AuthenticationError.class, MESSAGE_FAILED_AUTHENTICATION));
     }
 
