@@ -44,14 +44,18 @@ Para ejecutar este proyecto en diferentes navegadores se debe seguir el siguient
     gradle test -Dcontext=navegador -Dwebdriver.driver=driverAUtilizar
     gradle aggregate
 
+Si desea ejecutar las pruebas especificando el ambiente (environment) agregue **-Denvironment=nombreAmbiente** ver el 
+archivo **serenity.conf** ubicado en **src/test/resources/** para modificar cualquier valor con respecto a los ambientes,
+por el momento se especifica el ambiente de desarrollo llamado **dev** y el de producción llamado **prod**.
+
 Independiente de si es en un solo navegador o varios, se generará el reporte en la carpeta **/target/site/serenity/**
 abrir el archivo **index.html**
 
 Ejemplo:
 
     gradle clean 
-    gradle test -Dcontext=chrome -Dwebdriver.driver=chrome
-    gradle test -Dcontext=firefox -Dwebdriver.driver=firefox
+    gradle test -Dcontext=chrome -Dwebdriver.driver=chrome -Denvironment=dev
+    gradle test -Dcontext=firefox -Dwebdriver.driver=firefox -Denvironment=dev
     gradle aggregate
 
 
