@@ -25,6 +25,8 @@ apply plugin: 'net.serenity-bdd.aggregator'
 group 'com.cedaniel200'
 version '1.0-SNAPSHOT'
 
+java.sourceCompatibility = JavaVersion.VERSION_1_8
+
 repositories {
     mavenCentral()
     mavenLocal()
