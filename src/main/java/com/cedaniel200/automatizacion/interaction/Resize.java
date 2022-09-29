@@ -13,7 +13,7 @@ public class Resize extends DriverTask {
         super(action);
     }
 
-    public static Resize window(){
+    public static Resize windowToMaximize(){
         Consumer<WebDriver> action = webDriver -> webDriver.manage().window().maximize();
         return instrumented(Resize.class,action);
     }
