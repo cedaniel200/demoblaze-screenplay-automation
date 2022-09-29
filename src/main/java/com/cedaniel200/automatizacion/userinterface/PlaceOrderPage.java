@@ -5,6 +5,9 @@ import org.openqa.selenium.By;
 
 public class PlaceOrderPage {
 
+    private PlaceOrderPage() {
+    }
+
     public static final Target NAME = Target.the("Name").located(By.id("name"));
     public static final Target COUNTRY = Target.the("Country").located(By.id("country"));
     public static final Target CITY = Target.the("City").located(By.id("city"));
