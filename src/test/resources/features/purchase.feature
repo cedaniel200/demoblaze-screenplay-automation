@@ -5,7 +5,6 @@ Feature: Purchase
 
   Scenario: Purchase products from the shopping cart successfully
     Given Juan is authenticated
-    And add from Laptops a MacBook air
-    And add from Monitors an Apple monitor 24
+    And add some products
     When Juan makes the purchase
     Then should see the message Thank you for your purchase
