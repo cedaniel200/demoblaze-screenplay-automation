@@ -1,12 +1,12 @@
 package com.cedaniel200.automatizacion.userinterface;
 
-import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.targets.Target;
-import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.By;
 
-@DefaultUrl("https://www.demoblaze.com/")
-public class DemoBlazeHomePage extends PageObject {
+public class DemoBlazeHomePage {
+
+    private DemoBlazeHomePage() {
+    }
 
     public static final Target BANNER = Target.the("homepage banner").located(By.id("narvbarx"));
 

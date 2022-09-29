@@ -4,7 +4,6 @@ import com.cedaniel200.automatizacion.interaction.Resize;
 import com.cedaniel200.automatizacion.model.Product;
 import com.cedaniel200.automatizacion.model.Purchaser;
 import com.cedaniel200.automatizacion.task.Add;
-import com.cedaniel200.automatizacion.userinterface.DemoBlazeHomePage;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -24,8 +23,6 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class PurchaseStepDefinitions {
 
-    private DemoBlazeHomePage homePage;
-
     @Before
     public void setTheStage(){
         OnStage.setTheStage(new OnlineCast());
@@ -35,8 +32,8 @@ public class PurchaseStepDefinitions {
     public void authenticateActor(String actorName) {
         Purchaser aPurchaser = createByName(actorName);
         theActorCalled(aPurchaser.getName()).attemptsTo(
-                Open.browserOn(homePage),
-                Resize.window(),
+                Open.browserOn().thePageNamed("home.page"),
+                Resize.windowToMaximize(),
                 authenticate(aPurchaser.getCredentials())
         );
         theActorInTheSpotlight().remember(PURCHASER_INFORMATION, aPurchaser);
