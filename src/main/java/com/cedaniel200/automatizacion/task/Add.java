@@ -21,7 +21,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.alertIsPresent;
 
 public class Add implements Task {
 
-    private Product product;
+    private final Product product;
 
     public Add(Product product) {
         this.product = product;
@@ -39,7 +39,7 @@ public class Add implements Task {
                 WaitUntil.the(PRODUCT.of(product.getName()), isVisible()).forNoMoreThan(10).seconds(),
                 Click.on(PRODUCT.of(product.getName())),
                 Click.on(ADD_TO_CART_BUTTON),
-                WaitUntil.the(alertIsPresent()).forNoMoreThan(Duration.ofSeconds(10 )),
+                WaitUntil.the(alertIsPresent()).forNoMoreThan(Duration.ofSeconds(10)),
                 Switch.toAlert()
         );
     }
